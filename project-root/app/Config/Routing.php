@@ -24,8 +24,6 @@ class Routing extends BaseRouting
      * found taking precedence.
      *
      * Default: APPPATH . 'Config/Routes.php'
-     *
-     * @var list<string>
      */
     public array $routeFiles = [
         APPPATH . 'Config/Routes.php',
@@ -89,7 +87,7 @@ class Routing extends BaseRouting
      *
      * If FALSE, will stop searching and do NO automatic routing.
      */
-    public bool $autoRoute = false;
+    public bool $autoRoute = true;
 
     /**
      * If TRUE, will enable the use of the 'prioritize' option
@@ -108,7 +106,7 @@ class Routing extends BaseRouting
      *       'blog' => 'Acme\Blog\Controllers',
      *   ]
      *
-     * @var array<string, string>
+     * @var array [ uri_segment => namespace ]
      */
     public array $moduleRoutes = [];
 }

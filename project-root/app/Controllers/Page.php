@@ -1,27 +1,38 @@
-<?php namespace App\Controllers;
-class Page extends BaseController {
-public function about()
+<?php
+
+namespace App\Controllers;
+
+use App\Models\BooksModel;
+
+class Page extends BaseController
 {
-    echo "about page";
-}
-public function contact()
-{
-    echo "contact page";
-}
-public function faqs()
-{
-    echo "Faqs page";
-}
-public function tos()
-{
-    echo "Halaman Term of Service";
-}
-public function biodata()
+    public function index()
     {
-        echo "Nama       : Suhalif Hosaini";
-        echo "<br>NIM    : 4120039";
-        echo "<br>Alamat : sumenep, kangean";
-        echo "<br>Hobi   : baca buku";
-        echo "<br>E-mail : suhalifhosaini14@gmail.com";
+        $data = [
+            'title' => 'Home | Unipdu Press',
+            'tes' => ['satu', 'dua', 'tiga']
+        ];
+        return view('page/home', $data);
+    }
+
+    public function about()
+    {
+        $data = [
+            'title' => 'Home | Unipdu Press',
+            'tes' => ['satu', 'dua', 'tiga']
+        ];
+        return view('page/about', $data);
+    }
+
+    public function contact()
+    {
+        $data = [
+            'title' => 'Contact | Unipdu Press',
+            'alamat' => [
+                ['tipe' => 'Rumah', 'alamat' => 'Arjasa', 'kota' => 'Sumenep'],
+                ['tipe' => 'Kantor', 'alamat' => 'Arjasa', 'kota' => 'Sumenep']
+            ]
+        ];
+        return view('page/contact', $data);
     }
 }
